@@ -1,0 +1,471 @@
+# this is an auto generated file. This will be overwritten
+query SearchCentres(
+  $filter: SearchableCentreFilterInput
+  $sort: [SearchableCentreSortInput]
+  $limit: Int
+  $nextToken: String
+  $from: Int
+  $aggregates: [SearchableCentreAggregationInput]
+) {
+  searchCentres(
+    filter: $filter
+    sort: $sort
+    limit: $limit
+    nextToken: $nextToken
+    from: $from
+    aggregates: $aggregates
+  ) {
+    items {
+      id
+      name
+      coachs {
+        nextToken
+      }
+      student {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+    total
+    aggregateItems {
+      name
+      result {
+        ... on SearchableAggregateScalarResult {
+          value
+        }
+        ... on SearchableAggregateBucketResult {
+          buckets {
+            key
+            doc_count
+          }
+        }
+      }
+    }
+  }
+}
+query SearchCoaches(
+  $filter: SearchableCoachFilterInput
+  $sort: [SearchableCoachSortInput]
+  $limit: Int
+  $nextToken: String
+  $from: Int
+  $aggregates: [SearchableCoachAggregationInput]
+) {
+  searchCoaches(
+    filter: $filter
+    sort: $sort
+    limit: $limit
+    nextToken: $nextToken
+    from: $from
+    aggregates: $aggregates
+  ) {
+    items {
+      id
+      name
+      experience
+      student {
+        nextToken
+      }
+      centre {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      centreCoachsId
+    }
+    nextToken
+    total
+    aggregateItems {
+      name
+      result {
+        ... on SearchableAggregateScalarResult {
+          value
+        }
+        ... on SearchableAggregateBucketResult {
+          buckets {
+            key
+            doc_count
+          }
+        }
+      }
+    }
+  }
+}
+query SearchStudents(
+  $filter: SearchableStudentFilterInput
+  $sort: [SearchableStudentSortInput]
+  $limit: Int
+  $nextToken: String
+  $from: Int
+  $aggregates: [SearchableStudentAggregationInput]
+) {
+  searchStudents(
+    filter: $filter
+    sort: $sort
+    limit: $limit
+    nextToken: $nextToken
+    from: $from
+    aggregates: $aggregates
+  ) {
+    items {
+      id
+      name
+      age
+      coach {
+        nextToken
+      }
+      centre {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      centreStudentId
+    }
+    nextToken
+    total
+    aggregateItems {
+      name
+      result {
+        ... on SearchableAggregateScalarResult {
+          value
+        }
+        ... on SearchableAggregateBucketResult {
+          buckets {
+            key
+            doc_count
+          }
+        }
+      }
+    }
+  }
+}
+query GetCentre($id: ID!) {
+  getCentre(id: $id) {
+    id
+    name
+    coachs {
+      items {
+        id
+        name
+        experience
+        createdAt
+        updatedAt
+        centreCoachsId
+      }
+      nextToken
+    }
+    student {
+      items {
+        id
+        name
+        age
+        createdAt
+        updatedAt
+        centreStudentId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListCentres(
+  $filter: ModelCentreFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listCentres(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      coachs {
+        nextToken
+      }
+      student {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetCoach($id: ID!) {
+  getCoach(id: $id) {
+    id
+    name
+    experience
+    student {
+      items {
+        id
+        coachId
+        studentId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    centre {
+      id
+      name
+      coachs {
+        nextToken
+      }
+      student {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+    centreCoachsId
+  }
+}
+query ListCoaches(
+  $filter: ModelCoachFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listCoaches(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      experience
+      student {
+        nextToken
+      }
+      centre {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      centreCoachsId
+    }
+    nextToken
+  }
+}
+query GetStudent($id: ID!) {
+  getStudent(id: $id) {
+    id
+    name
+    age
+    coach {
+      items {
+        id
+        coachId
+        studentId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    centre {
+      id
+      name
+      coachs {
+        nextToken
+      }
+      student {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+    centreStudentId
+  }
+}
+query ListStudents(
+  $filter: ModelStudentFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listStudents(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      age
+      coach {
+        nextToken
+      }
+      centre {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      centreStudentId
+    }
+    nextToken
+  }
+}
+query GetStudentTeacher($id: ID!) {
+  getStudentTeacher(id: $id) {
+    id
+    coachId
+    studentId
+    coach {
+      id
+      name
+      experience
+      student {
+        nextToken
+      }
+      centre {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      centreCoachsId
+    }
+    student {
+      id
+      name
+      age
+      coach {
+        nextToken
+      }
+      centre {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      centreStudentId
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListStudentTeachers(
+  $filter: ModelStudentTeacherFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listStudentTeachers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      coachId
+      studentId
+      coach {
+        id
+        name
+        experience
+        createdAt
+        updatedAt
+        centreCoachsId
+      }
+      student {
+        id
+        name
+        age
+        createdAt
+        updatedAt
+        centreStudentId
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query StudentTeachersByCoachId(
+  $coachId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelStudentTeacherFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  studentTeachersByCoachId(
+    coachId: $coachId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      coachId
+      studentId
+      coach {
+        id
+        name
+        experience
+        createdAt
+        updatedAt
+        centreCoachsId
+      }
+      student {
+        id
+        name
+        age
+        createdAt
+        updatedAt
+        centreStudentId
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query StudentTeachersByStudentId(
+  $studentId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelStudentTeacherFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  studentTeachersByStudentId(
+    studentId: $studentId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      coachId
+      studentId
+      coach {
+        id
+        name
+        experience
+        createdAt
+        updatedAt
+        centreCoachsId
+      }
+      student {
+        id
+        name
+        age
+        createdAt
+        updatedAt
+        centreStudentId
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}

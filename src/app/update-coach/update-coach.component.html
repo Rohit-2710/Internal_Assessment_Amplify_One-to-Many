@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div *ngIf="!submitted">
+        <div class="container-fluid">
+            <form 
+            required 
+            [formGroup]="myForm"
+            (submit)="updateCoach(myForm.value)"
+            >
+           <div class="form-group">
+            <label for="name" >Add Name of Coach</label>
+            <input type="text" class="form-control" formControlName="name">
+           </div>
+           <div class="set">
+            <label for="experience" class="label">Add Experience for Coach</label>
+            <input type="text" class="form-control" formControlName="experience">
+           </div>
+           <button class="btn btn-primary" style="margin-top: 5px;" value="Submit">Submit</button>
+    
+    
+        </form>
+        </div>
+    </div>
+    <div *ngIf="submitted">
+       <div class="container">
+        <div class="card">
+            <h3 class="card-title">Your Response has been Submitted</h3>
+            <button class="btn btn-primary" routerLink="" (click)="reset()">Return to Home</button>
+        </div>
+       </div>
+    </div>
+</div>

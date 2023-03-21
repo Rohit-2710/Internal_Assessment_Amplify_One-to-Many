@@ -1,0 +1,418 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateCentre($filter: ModelSubscriptionCentreFilterInput) {
+  onCreateCentre(filter: $filter) {
+    id
+    name
+    coachs {
+      items {
+        id
+        name
+        experience
+        createdAt
+        updatedAt
+        centreCoachsId
+      }
+      nextToken
+    }
+    student {
+      items {
+        id
+        name
+        age
+        createdAt
+        updatedAt
+        centreStudentId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateCentre($filter: ModelSubscriptionCentreFilterInput) {
+  onUpdateCentre(filter: $filter) {
+    id
+    name
+    coachs {
+      items {
+        id
+        name
+        experience
+        createdAt
+        updatedAt
+        centreCoachsId
+      }
+      nextToken
+    }
+    student {
+      items {
+        id
+        name
+        age
+        createdAt
+        updatedAt
+        centreStudentId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteCentre($filter: ModelSubscriptionCentreFilterInput) {
+  onDeleteCentre(filter: $filter) {
+    id
+    name
+    coachs {
+      items {
+        id
+        name
+        experience
+        createdAt
+        updatedAt
+        centreCoachsId
+      }
+      nextToken
+    }
+    student {
+      items {
+        id
+        name
+        age
+        createdAt
+        updatedAt
+        centreStudentId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateCoach($filter: ModelSubscriptionCoachFilterInput) {
+  onCreateCoach(filter: $filter) {
+    id
+    name
+    experience
+    student {
+      items {
+        id
+        coachId
+        studentId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    centre {
+      id
+      name
+      coachs {
+        nextToken
+      }
+      student {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+    centreCoachsId
+  }
+}
+subscription OnUpdateCoach($filter: ModelSubscriptionCoachFilterInput) {
+  onUpdateCoach(filter: $filter) {
+    id
+    name
+    experience
+    student {
+      items {
+        id
+        coachId
+        studentId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    centre {
+      id
+      name
+      coachs {
+        nextToken
+      }
+      student {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+    centreCoachsId
+  }
+}
+subscription OnDeleteCoach($filter: ModelSubscriptionCoachFilterInput) {
+  onDeleteCoach(filter: $filter) {
+    id
+    name
+    experience
+    student {
+      items {
+        id
+        coachId
+        studentId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    centre {
+      id
+      name
+      coachs {
+        nextToken
+      }
+      student {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+    centreCoachsId
+  }
+}
+subscription OnCreateStudent($filter: ModelSubscriptionStudentFilterInput) {
+  onCreateStudent(filter: $filter) {
+    id
+    name
+    age
+    coach {
+      items {
+        id
+        coachId
+        studentId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    centre {
+      id
+      name
+      coachs {
+        nextToken
+      }
+      student {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+    centreStudentId
+  }
+}
+subscription OnUpdateStudent($filter: ModelSubscriptionStudentFilterInput) {
+  onUpdateStudent(filter: $filter) {
+    id
+    name
+    age
+    coach {
+      items {
+        id
+        coachId
+        studentId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    centre {
+      id
+      name
+      coachs {
+        nextToken
+      }
+      student {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+    centreStudentId
+  }
+}
+subscription OnDeleteStudent($filter: ModelSubscriptionStudentFilterInput) {
+  onDeleteStudent(filter: $filter) {
+    id
+    name
+    age
+    coach {
+      items {
+        id
+        coachId
+        studentId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    centre {
+      id
+      name
+      coachs {
+        nextToken
+      }
+      student {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+    centreStudentId
+  }
+}
+subscription OnCreateStudentTeacher(
+  $filter: ModelSubscriptionStudentTeacherFilterInput
+) {
+  onCreateStudentTeacher(filter: $filter) {
+    id
+    coachId
+    studentId
+    coach {
+      id
+      name
+      experience
+      student {
+        nextToken
+      }
+      centre {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      centreCoachsId
+    }
+    student {
+      id
+      name
+      age
+      coach {
+        nextToken
+      }
+      centre {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      centreStudentId
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateStudentTeacher(
+  $filter: ModelSubscriptionStudentTeacherFilterInput
+) {
+  onUpdateStudentTeacher(filter: $filter) {
+    id
+    coachId
+    studentId
+    coach {
+      id
+      name
+      experience
+      student {
+        nextToken
+      }
+      centre {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      centreCoachsId
+    }
+    student {
+      id
+      name
+      age
+      coach {
+        nextToken
+      }
+      centre {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      centreStudentId
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteStudentTeacher(
+  $filter: ModelSubscriptionStudentTeacherFilterInput
+) {
+  onDeleteStudentTeacher(filter: $filter) {
+    id
+    coachId
+    studentId
+    coach {
+      id
+      name
+      experience
+      student {
+        nextToken
+      }
+      centre {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      centreCoachsId
+    }
+    student {
+      id
+      name
+      age
+      coach {
+        nextToken
+      }
+      centre {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      centreStudentId
+    }
+    createdAt
+    updatedAt
+  }
+}

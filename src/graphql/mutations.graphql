@@ -1,0 +1,448 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateCentre(
+  $input: CreateCentreInput!
+  $condition: ModelCentreConditionInput
+) {
+  createCentre(input: $input, condition: $condition) {
+    id
+    name
+    coachs {
+      items {
+        id
+        name
+        experience
+        createdAt
+        updatedAt
+        centreCoachsId
+      }
+      nextToken
+    }
+    student {
+      items {
+        id
+        name
+        age
+        createdAt
+        updatedAt
+        centreStudentId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateCentre(
+  $input: UpdateCentreInput!
+  $condition: ModelCentreConditionInput
+) {
+  updateCentre(input: $input, condition: $condition) {
+    id
+    name
+    coachs {
+      items {
+        id
+        name
+        experience
+        createdAt
+        updatedAt
+        centreCoachsId
+      }
+      nextToken
+    }
+    student {
+      items {
+        id
+        name
+        age
+        createdAt
+        updatedAt
+        centreStudentId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteCentre(
+  $input: DeleteCentreInput!
+  $condition: ModelCentreConditionInput
+) {
+  deleteCentre(input: $input, condition: $condition) {
+    id
+    name
+    coachs {
+      items {
+        id
+        name
+        experience
+        createdAt
+        updatedAt
+        centreCoachsId
+      }
+      nextToken
+    }
+    student {
+      items {
+        id
+        name
+        age
+        createdAt
+        updatedAt
+        centreStudentId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateCoach(
+  $input: CreateCoachInput!
+  $condition: ModelCoachConditionInput
+) {
+  createCoach(input: $input, condition: $condition) {
+    id
+    name
+    experience
+    student {
+      items {
+        id
+        coachId
+        studentId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    centre {
+      id
+      name
+      coachs {
+        nextToken
+      }
+      student {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+    centreCoachsId
+  }
+}
+mutation UpdateCoach(
+  $input: UpdateCoachInput!
+  $condition: ModelCoachConditionInput
+) {
+  updateCoach(input: $input, condition: $condition) {
+    id
+    name
+    experience
+    student {
+      items {
+        id
+        coachId
+        studentId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    centre {
+      id
+      name
+      coachs {
+        nextToken
+      }
+      student {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+    centreCoachsId
+  }
+}
+mutation DeleteCoach(
+  $input: DeleteCoachInput!
+  $condition: ModelCoachConditionInput
+) {
+  deleteCoach(input: $input, condition: $condition) {
+    id
+    name
+    experience
+    student {
+      items {
+        id
+        coachId
+        studentId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    centre {
+      id
+      name
+      coachs {
+        nextToken
+      }
+      student {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+    centreCoachsId
+  }
+}
+mutation CreateStudent(
+  $input: CreateStudentInput!
+  $condition: ModelStudentConditionInput
+) {
+  createStudent(input: $input, condition: $condition) {
+    id
+    name
+    age
+    coach {
+      items {
+        id
+        coachId
+        studentId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    centre {
+      id
+      name
+      coachs {
+        nextToken
+      }
+      student {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+    centreStudentId
+  }
+}
+mutation UpdateStudent(
+  $input: UpdateStudentInput!
+  $condition: ModelStudentConditionInput
+) {
+  updateStudent(input: $input, condition: $condition) {
+    id
+    name
+    age
+    coach {
+      items {
+        id
+        coachId
+        studentId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    centre {
+      id
+      name
+      coachs {
+        nextToken
+      }
+      student {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+    centreStudentId
+  }
+}
+mutation DeleteStudent(
+  $input: DeleteStudentInput!
+  $condition: ModelStudentConditionInput
+) {
+  deleteStudent(input: $input, condition: $condition) {
+    id
+    name
+    age
+    coach {
+      items {
+        id
+        coachId
+        studentId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    centre {
+      id
+      name
+      coachs {
+        nextToken
+      }
+      student {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+    centreStudentId
+  }
+}
+mutation CreateStudentTeacher(
+  $input: CreateStudentTeacherInput!
+  $condition: ModelStudentTeacherConditionInput
+) {
+  createStudentTeacher(input: $input, condition: $condition) {
+    id
+    coachId
+    studentId
+    coach {
+      id
+      name
+      experience
+      student {
+        nextToken
+      }
+      centre {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      centreCoachsId
+    }
+    student {
+      id
+      name
+      age
+      coach {
+        nextToken
+      }
+      centre {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      centreStudentId
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateStudentTeacher(
+  $input: UpdateStudentTeacherInput!
+  $condition: ModelStudentTeacherConditionInput
+) {
+  updateStudentTeacher(input: $input, condition: $condition) {
+    id
+    coachId
+    studentId
+    coach {
+      id
+      name
+      experience
+      student {
+        nextToken
+      }
+      centre {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      centreCoachsId
+    }
+    student {
+      id
+      name
+      age
+      coach {
+        nextToken
+      }
+      centre {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      centreStudentId
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteStudentTeacher(
+  $input: DeleteStudentTeacherInput!
+  $condition: ModelStudentTeacherConditionInput
+) {
+  deleteStudentTeacher(input: $input, condition: $condition) {
+    id
+    coachId
+    studentId
+    coach {
+      id
+      name
+      experience
+      student {
+        nextToken
+      }
+      centre {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      centreCoachsId
+    }
+    student {
+      id
+      name
+      age
+      coach {
+        nextToken
+      }
+      centre {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      centreStudentId
+    }
+    createdAt
+    updatedAt
+  }
+}

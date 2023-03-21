@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="container">
+        <div *ngIf="!submitted">
+            <div class="container">
+                <div class="form">
+                    <form class="form-fields"
+                    [formGroup]="myForm"
+                    required 
+                    (submit)="updateCentre(myForm.value)"
+                    >
+                    <label for="name" class="label">Enter the Updated name for Gym</label>
+                    <input type="text" class="input" formControlName='name' placeholder="Enter Name of Center">
+                    <button class="button" value="submit">Submit</button>
+                </form>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="submitted">
+            <div class="container">
+                <div class="card">
+                    <h3 class="card-title">Your Response has been Submitted</h3>
+                    <button class="btn btn-primary" routerLink="" (click)="reset()">Return to Home</button>
+                </div>
+               </div>
+        </div>
+        </div>
+    
+</div>

@@ -1,0 +1,57 @@
+<!-- <div class="container-fluid">
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr scope="row">
+                    <td>Gym Name</td>
+                    <td>Actions</td>
+                    <td>Delete</td>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let d of data">
+                    <td>{{d.name}}</td>
+                    <td><button class="btn btn-primary" style="margin-right: 5px;" [routerLink]="['coach',d.id]">Add Coach</button>
+                        <button class="btn btn-primary" >Add Student</button>
+                    </td>
+                    <td><button class="btn btn-danger" (click)="deleteCentre(d.id)" >Delete</button></td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> -->
+
+<div class="container-fluid">
+    <div class="container">
+        <div *ngFor="let d of data">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">{{d.name}}</h3>
+                    <table class="table table-striped table-hover table-bordered">
+                        <thead>
+                            <tr scope="row"></tr>
+                            <td>Coach Name</td>
+                            <td>Coach Experience</td>
+                            <td>Actions</td>
+                        </thead>
+                        <tbody>
+                            
+                            <tr *ngFor="let c of d.coachs.items">
+                                <td>{{c.name}}</td>
+                                <td>{{c.experience}}</td>
+                                <td><button class="btn btn-danger" (click)="deleteCoach(c.id)">Delete Coach</button>
+                                    <button class="btn btn-primary" [routerLink]="['update-coach',c.id]">Update Coach</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn btn-primary" [routerLink]="['coach',d.id]">Add new Coach</button>
+                    <button class="btn btn-danger" (click)="deleteCentre(d.id)">Delete Gym</button>
+                    <button class="btn btn-primary" [routerLink]="['update',d.id]">Update Gym</button>
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>
